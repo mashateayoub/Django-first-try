@@ -7,13 +7,11 @@
     <title>Projects</title>
 </head>
 <body>
-<div class="container mt-4">
-
-
 {% extends "base.html" %}
+<div class="container">
 {% load static %}
 {% block page_content %}
-<h1>Projects</h1>
+<h1 class="mt-4">Projects</h1>
 <div class="row container p-4">
 {% for project in projects %}
     <div class="col-md-4">
