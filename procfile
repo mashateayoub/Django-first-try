@@ -1,1 +1,1 @@
-web: gunicorn Django-first-try.wsgi
+web: gunicorn project101:app
