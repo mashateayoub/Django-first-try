@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block page_content %}
+<div class=" mt-4 justify-content-center col-md-12 ">
+
+    {% for post in posts %}
+    <div class="p-4 mt-4" style="border:2px solid #c5c5c5; border-radius: 10px;box-shadow: 22px 19px 39px -13px rgba(0,0,0,0.86);">
+    <h2 ><a class="text-dark" style="text-decoration: none;" href="{% url 'blog_detail' post.pk%}">{{ post.title }}</a></h2>
+    <small class="">
+        {{ post.created_on.date }} |&nbsp;
+        Categories:&nbsp;
+        {% for category in post.categories.all %}
+        <a href="{% url 'blog_category' category.name %}">
+            {{ category.name }}
+        </a>&nbsp;
+        {% endfor %}
+    </small>
+    <p class="mt-2">{{ post.body | slice:":400" }}...</p>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}
