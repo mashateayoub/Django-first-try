@@ -1,10 +1,10 @@
 {% extends "base.html" %}
 {% block page_content %}
-<div class="mt-4 col-md-8 offset-md-2">
+<div class="m-4 col-md-12">
     <h1>{{ category | title }}</h1>
-    <hr>
     {% for post in posts %}
-        <h2><a href="{% url 'blog_detail' post.pk%}">{{ post.title }}</a></h2>
+    <div class="mt-4 p-4" class="p-4 mt-4" style="border:2px solid #c5c5c5; border-radius: 10px;box-shadow: 22px 19px 20px -13px rgba(0,0,0,0.86);"> 
+        <h2><a class="text-dark" style="text-decoration: none;" href="{% url 'blog_detail' post.pk%}">{{ post.title }}</a></h2>
         <small>
             {{ post.created_on.date }} |&nbsp;
             Categories:&nbsp;
@@ -14,7 +14,8 @@
             </a>&nbsp;
             {% endfor %}
         </small>
-        <p>{{ post.body | slice:":400" }}...</p>
+        <p class="mt-2">{{ post.body | slice:":400" }}...</p>
+    </div>
     {% endfor %}
 </div>
 {% endblock %}

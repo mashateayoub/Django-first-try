@@ -1,12 +1,17 @@
 from django.shortcuts import render
 from blog.forms import CommentForm
-from blog.models import Comment, Post
+from blog.models import Category, Comment, Post
 
 # Create your views here.
 def blog_index(request):
     posts=Post.objects.all().order_by('created_on')
     context={"posts":posts}
     return render(request,'blog_index.html',context)
+
+def categories_blog(request):
+    cats=Category.objects.all()
+    context={"Categories":cats}
+    return render(request,'categories_blog.html',context)
 
 def blog_category(request, category):
     posts = Post.objects.filter(

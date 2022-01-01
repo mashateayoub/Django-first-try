@@ -1,9 +1,9 @@
 {% extends "base.html" %}
 {% block page_content %}
-<div class=" mt-4 justify-content-center col-md-12 ">
+<div class=" m-4 justify-content-center col-md-12 ">
 
     {% for post in posts %}
-    <div class="p-4 mt-4" style="border:2px solid #c5c5c5; border-radius: 10px;box-shadow: 22px 19px 39px -13px rgba(0,0,0,0.86);">
+    <div class="p-4 mt-4" style="border:2px solid #c5c5c5; border-radius: 10px;box-shadow: 22px 19px 20px -13px rgba(0,0,0,0.86);">
     <h2 ><a class="text-dark" style="text-decoration: none;" href="{% url 'blog_detail' post.pk%}">{{ post.title }}</a></h2>
     <small class="">
         {{ post.created_on.date }} |&nbsp;
